@@ -1,0 +1,207 @@
+\documentclass[11pt, a4paper]{article}
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage[french]{babel}
+  \usepackage{lmodern}
+  \usepackage[usegeometry]{typearea}
+  \usepackage{geometry}
+  \usepackage{esvect}
+  \usepackage{amsmath}
+  \usepackage{amsthm}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{multicol}
+  \usepackage{color}
+  \usepackage{graphicx}
+  \usepackage{overpic}
+  \usepackage{enumitem}
+  \usepackage{colortbl}
+  \usepackage{wasysym}
+  \usepackage{tabularx}
+  \usepackage{csquotes}
+  \usepackage{tikz}
+  \usepackage{float}
+  \usepackage{systeme}
+  \usepackage{titlesec}
+  \usepackage{pgf}
+  \usepackage{bm}
+  \usepackage{tikz}
+  \usepackage{pgfplots}
+  \usepackage{mathrsfs}
+  \usepackage{framed}
+  \usepackage{remreset}
+  \usepackage{array}
+  \usepackage{calc}
+  \usepackage{ifthen}
+  \usepackage{polynom}
+  \usepackage{xhfill}
+  \usepackage{fancyhdr}
+  \usepackage{xfrac}
+  \usepackage{chemarr}
+  \usepackage{mleftright}
+  \usepackage{cancel}
+  \usepackage{romanbar}
+  \usepackage{booktabs}
+  \usepackage{siunitx}
+  \usepackage{gensymb}
+  \usepackage{wrapfig}
+  \usepackage{etoolbox}
+  \usepackage{soul}
+  \usepackage{listings}
+  \usepackage{microtype}
+  \usepackage{pdfpages}
+  \usepackage{minted}
+  \usepackage[framemethod=tikz]{mdframed}
+  \usepackage[nodayofweek]{datetime}
+  \usepackage[bookmarks=false, colorlinks]{hyperref}
+  \usetikzlibrary{arrows}
+  \usetikzlibrary{babel}
+  \setlength{\parindent}{0pt}
+  \pgfplotsset{compat=1.14}
+  \polyset{%
+    style=C,
+    delims={\big(}{\big)}
+  }
+
+  \newcommand{\hSchool}{HEIG-VD}
+  \newcommand{\hClass}{GRE}
+  \newcommand{\hFile}{Problème d'assemblée de délégués}
+  \newcommand{\hFileType}{}
+  \newcommand{\hFileShort}{Laboratoire 3}
+  \newcommand{\hAuthors}{Jarod Streckeisen, Timothée Van Hove}
+  \newcommand{\hAuthorsFancy}{Jarod \textsc{Streckeisen}, Timothée \textsc{Van Hove}}
+  \newcommand{\hPdfTitle}{\hSchool - \hClass - \hFile :: \hFileType}
+
+  \geometry{
+    a4paper,
+    left=15mm,
+    right=15mm,
+    marginpar=20mm,
+    top=18mm,
+    bottom=22mm,
+    %showframe
+  }
+  
+  \hypersetup{
+    pdftitle={\hPdfTitle},
+    pdfauthor={\hAuthors},
+    pdfsubject={\hClass},
+    pdfkeywords={},
+    pdfcreator={LaTeX},
+    pdfproducer={pdfLaTeX},
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=black
+  }
+
+
+  \renewcommand{\baselinestretch}{1.05}
+  % \setlength{\columnseprule}{1pt}
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{3pt plus 0.5ex}
+  % \setcounter{secnumdepth}{0}
+  \everymath{\displaystyle}
+  
+  \newcommand{\g}[1]{\og #1 \fg{}}
+  \newcommand{\HRule}{\rule{.9\linewidth}{.6pt}}
+  \newcommand\tab[1][1cm]{\hspace*{#1}}
+
+  \title{\vspace{-2.25cm}\hSchool{} --- \hClass\\\textbf{\hFile{}  \hFileType}\vspace{-0.45cm}}
+  \date{\vspace{-0.35cm}\today\\\vspace{-0.5cm}}
+  \author{\hAuthorsFancy}
+  
+  \pagestyle{fancy}
+  \fancyhf{}
+  \rhead{\hAuthors}
+  \lhead{\hClass{} -- \hFileShort}
+  \lfoot{\twodigit{\the\month}.\the\year}
+  \rfoot{\thepage}
+  
+  \definecolor{wrwrwr}{rgb}{0.38,0.38,0.38}
+  \definecolor{ffxfqq}{rgb}{1.,0.50,0.}
+  \definecolor{e8000d}{rgb}{0.91,0.,0.13}
+  \definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
+  \definecolor{000000}{rgb}{0.,0.,0.}
+  \definecolor{ffffff}{rgb}{1.,1.,1.}
+  
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+  
+  \setitemize{label=--}
+
+  %\preto{\section}{\clearpageafterfirst}
+  %\preto{\subsection}{\filbreak}
+  % \newcommand{\clearpageafterfirst}{%
+  %   \gdef\clearpageafterfirst{\clearpage}%
+  % }
+
+  \setcounter{secnumdepth}{4}
+  \titleformat{\section}
+    {\vspace{-0.15cm}\normalfont\large\bfseries}{\thesection}{1em}{}[\vspace{-0.15cm}]
+  \titleformat{\subsection}
+    {\vspace{-0.2cm}\normalfont\small\bfseries}{\thesubsection}{1em}{}[\vspace{-0.05cm}]
+  \titleformat{\subsubsection}
+    {\vspace{-0.15cm}\normalfont\small\bfseries}{\thesubsubsection}{1em}{}[\vspace{-0.05cm}]
+  \titleformat{\paragraph}
+    {\vspace{-0.15cm}\normalfont\small\bfseries}{\theparagraph}{1em}{}[\vspace{-0.15cm}]
+    
+    \setlist{nosep}
+
+\begin{document}
+\maketitle
+
+\section{Description du problème}
+L’assemblée des délégués, organe central de l’association cantonale vaudoise de gymnastique, est composée, entre autres, d’un membre de chacune des $p$ sociétés de gymnastique du canton. Parmi tous les membres de ces sociétés, $n$ se sont portés volontaires pour siéger à l’assemblée des délégués. Pour chaque candidat, on connaît son district de résidence et les sociétés dont il est membre (certaines personnes sont membres de plusieurs clubs de gymnastique). 
+
+L'objectif est de créer, si possible, une assemblée formée de $p$ membres, un par société de gymnastique, et assurant pour chacun des 10 districts du canton un nombre de délégués compris entre un minimum $l_j$ et un maximum $u_j$ (bornes incluses), $j = 1, \ldots, 10$.
+
+Nous supposons que $n \geq p > 1$ et que la somme $\sum_{j=1}^{10} l_j \leq p \leq \sum_{j=1}^{10} u_j$.
+
+\section{Modélisation du problème}
+Nous avons décidé de modéliser ce problème sous la forme d’un problème de flots dans un réseau.
+
+\subsection{Construction du réseau}
+
+Construire le réseau $R = (V, E, u)$  comme suit:
+
+\begin{itemize}
+    \item Un sommet $s$, représentant la source.
+    \item Un sommet $t$, représentant le puits.
+    \item Les sommets $S_i$ représentant les sociétés, pour $i = 1, \ldots, p$.
+    \item Les sommets $C_i$ représentant les candidats, pour $i = 1, \ldots, n$.
+    \item Les sommets $D_j$ représentant les districts, pour $j = 1, \ldots, 10$.
+    \item Deux sommets fictifs $T'$ et $T''$ pour gérer les contraintes de représentation minimale et maximale par district.
+    \item De la source $s$ à chaque $S_i$, une arête de capacité $1$.
+    \item De chaque $S_i$ à chaque $C_i$, une arête de capacité $1$ si le candidat $C_i$ est membre de la société $S_i$.
+    \item De chaque $C_i$ à son district $D_j$, une arête de capacité $1$.
+    \item De chaque $D_j$ à $T'$, une arête de capacité $l_j$ (le minimum de représentants pour le district $j$).
+    \item De chaque $D_j$ à $T''$, une arête de capacité $u_j - l_j$ (la différence entre le maximum et le minimum de représentants pour le district $j$).
+    \item De $T'$ à $t$, une arête de capacité $\sum_{j=1}^{10} l_j$.
+    \item De $T''$ à $t$, une arête de capacité $p - \sum_{j=1}^{10} l_j$.
+\end{itemize}
+\pagebreak
+\subsection {Illustration d'une construction d'un tel réseau}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{GRE-diagram.png}
+    \caption{Exemple de Réseau}
+    \label{fig:exemple-reseau}
+\end{figure}
+
+\section{Résolution du problème}
+Pour résoudre ce problème, nous utilisons un algorithme pour le calcul d’un flot compatible de valeur maximale (comme l'algorithme de Ford-Fulkerson) pour trouver le flot maximum de $s$ à $t$ dans $R$.
+
+\subsection{Interprétation des résultats}
+\begin{itemize}
+    \item Si le flot maximum trouvé est égal à $p$, alors il est possible de sélectionner $p$ candidats respectant toutes les contraintes de représentation.
+    \item Si le flot maximum est inférieur à $p$, alors il n'est pas possible de former une assemblée respectant toutes les contraintes.
+\end{itemize}
+
+Dans le cas où le flot maximum est égal à $p$, nous analysons les arêtes saturées pour déterminer les candidats sélectionnés pour former l'assemblée.
+
+
+\end{document}
